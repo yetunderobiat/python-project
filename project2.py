@@ -20,7 +20,6 @@ def submit_form():
 
 root = tk.Tk()
 root.title("User Registration Form")
-
 root.geometry("400x250")
 
 firstName_label = tk.Label(root,text="First Name:")       
