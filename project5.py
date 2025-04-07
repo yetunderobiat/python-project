@@ -157,4 +157,17 @@ for (text, row, col) in buttons:
 # Run the main loop
 root.mainloop()
 
-
+# code explanation 
+# 1. import tkinter as tk: tkinter is a python library for creating graphical user interfaces(GUI). we import it to use its tools and widgets for our calculator.
+# 2. function: click_button (value): this function is called when the user clicks any button on the calculator(like ,7,8).
+# clear() this function clears theinput area when the user clicks the C button.
+# calculate() this function is used when the user clicks the '=' button. it itakes the maths expression the userenntered and calculate the result using python's eval() function.
+# 3. creating the main window: root=tk.Tk(). this line creates the main window (the box where everything will appear). root.title('Simple calculator), which will appear at the top of the win
+# 4. creating the entry widget(display area): entry=tk.Entry(...)
+#this creates a box(called an 'entry' widget) where the use will see the numbers they type. it's like the screen of a calculator where the result is  shown.
+# the font=('arial',24)part setsthe text size to make it easy to read. 
+# the justify right part makes sure the numbers appear on the right side of the entry box.
+# 6. button layout: button=[..] this is a list that comtains the names of the button
+# button = tk.Button this line creates a button for each items in the list. 
+# 7.  placing buttons in the grid. button.grid(row=row, column=col): this places each button in the window at the specified row and column
+# 8. running the syste root.mainloop(): this tells the program to keep the window open and wair for user interaction(like button click). without this line, the  window would open and close
