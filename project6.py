@@ -20,40 +20,55 @@ def submit_form():
         messagebox.showerror("Error", "Please fill in all fields.")
 
 root = tk.Tk()
-root.title('Registration Form')
-root.geometry('500x500')
+root.title("Registration Form")
+root.geometry('600x700')
+root.configure(bg="lightblue") 
+
+# Registration form
+root.title_label = tk.Label(root, text="Registration Form", font=("Arial", 22, "bold"), width=20, background= 'lightblue')
+root.title_label.grid(row=0, column=0, columnspan=2, pady=(40, 20))
 
 # Full Name
-tk.Label(root, text="Full Name:").grid(row=0, column=0, padx=10, pady=10, sticky='w')
+fullName_label = tk.Label(root,text="Full Name:", font=("Times New Roman", 14, "bold"), background= 'lightblue')       
+fullName_label.grid(row=1, column=0, padx=30, pady=30)
+
 fullName_entry = tk.Entry(root)
-fullName_entry.grid(row=0, column=1, padx=10, pady=10)
+fullName_entry.grid(row=1, column=1, padx=30, pady=30)
 
 # Email
-tk.Label(root, text="Email:").grid(row=1, column=0, padx=10, pady=10, sticky='w')
+email_label = tk.Label(root,text="Email:", font=("Times New Roman", 14, "bold"), background= 'lightblue')
+email_label.grid(row=2, column=0, padx=30, pady=30)
+
 email_entry = tk.Entry(root)
-email_entry.grid(row=1, column=1, padx=10, pady=10)
+email_entry.grid(row=2, column=1, padx=30, pady=30)
 
 # Gender
-tk.Label(root, text="Select Gender:").grid(row=2, column=0, padx=10, pady=10, sticky='w')
+gender_var = tk.Label(root, text="Select Gender:", font=("Times New Roman", 14, "bold"), background= 'lightblue')
+gender_var.grid(row=3, column=0, padx=30, pady=30)
 gender_var = tk.StringVar()
+
 genders = [("Male", "Male"), ("Female", "Female"), ("Other", "Other")]
 for i, (text, value) in enumerate(genders):
-    tk.Radiobutton(root, text=text, variable=gender_var, value=value).grid(row=2, column=1+i, sticky='w')
+    tk.Radiobutton(root, text=text, variable=gender_var, value=value).grid(row=3, column=1+i)
 
 # Country
-tk.Label(root, text="Country:").grid(row=3, column=0, padx=10, pady=10, sticky='w')
-country_entry = tk.Entry(root)
-country_entry.grid(row=3, column=1, padx=10, pady=10)
+country_entry = tk.Label(root, text="Country:", font=("Times New Roman", 14, "bold"), background= 'lightblue')
+country_entry.grid(row=4, column=0, padx=30, pady=30)
 
-# Programming Language
-tk.Label(root, text="Select Program:").grid(row=4, column=0, padx=10, pady=10, sticky='w')
+country_entry = tk.Entry(root)
+country_entry.grid(row=4, column=1, padx=30, pady=30)
+
+# Programming 
+programming_var = tk.Label(root, text="Select Program:", font=("Times New Roman", 14, "bold"), background= 'lightblue')
+programming_var.grid(row=5, column=0, padx=30, pady=30)
+
 programming_var = tk.StringVar()
 programs = [("Java", "Java"), ("Python", "Python")]
 for i, (text, value) in enumerate(programs):
-    tk.Radiobutton(root, text=text, variable=programming_var, value=value).grid(row=4, column=1+i, sticky='w')
+    tk.Radiobutton(root, text=text, variable=programming_var, value=value).grid(row=5, column=1+i)
 
 # Submit Button
-submit_button = tk.Button(root, text="Submit", command=submit_form)
-submit_button.grid(row=5, column=0, columnspan=2, pady=20)
+submit_button = tk.Button(root, text="Submit", font=("Arial", 14, "bold"), width=30, borderwidth=2, background='red', command=submit_form)
+submit_button.grid(row=6, column=0, columnspan=3, pady=30)
 
 root.mainloop()
